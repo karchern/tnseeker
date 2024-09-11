@@ -188,7 +188,7 @@ def extractor(fastq,folder_path,sequences,barcode,barcode_upstream,barcode_downs
                             result_objs.append(result)
                         pool.close()
                         pool.join()
-                            
+                        breakpoint()
                         result = [result.get() for result in result_objs]
                         if not barcode:
                             for trimmed,barcodes in result:
