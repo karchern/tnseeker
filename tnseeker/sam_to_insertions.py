@@ -281,7 +281,7 @@ def extractor(name_folder, folder_path, pathing, paired_ended,barcode,\
         for key in insertion_count:
             if key in batch_goals[batch]:
                 insertion_count_filtered[key] = insertion_count[key]
-        breakpoint()
+        annotation_processer(insertion_count_filtered, read_threshold, read_cut, barcode, annotation_file, ir_size_cutoff, name_folder, folder_path)
         result=pool.apply_async(annotation_processer, 
                             args=((insertion_count_filtered, 
                                    read_threshold,
@@ -335,7 +335,7 @@ def extractor(name_folder, folder_path, pathing, paired_ended,barcode,\
 
 def annotation_processer(insertion_count_filtered,read_threshold,read_cut,
                          barcode,annotation_file,ir_size_cutoff,name_folder,folder_path):
-
+    breakpoint()
     if read_threshold:
         insertion_count_filtered=dict_filter(insertion_count_filtered,read_cut,barcode)
     
