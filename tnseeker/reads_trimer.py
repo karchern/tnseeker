@@ -115,6 +115,7 @@ def read_trimer(reading,sequences,quality_set,mismatches,trimming_len,miss_up,\
                 read[0],read[2] = str(read[0],"utf-8"),str(read[2],"utf-8")
                 read[0] = read[0].split(" ")[0]
                 processed_read.append(read)
+                breakpoint()
                 if barcode_allow:
                     barcode = barcodeID(sequence,sequence_bin,borders,miss_up,miss_down)
                     if barcode is not None:

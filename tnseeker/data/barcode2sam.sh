@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define the SAM and barcodes file paths
-SAM_FILE="$1"
-BARCODES_FILE="$2"
+SAM_FILE="$1" # alignment.sam"
+BARCODES_FILE="$2" # barcodes_1.txt
 OUTPUT_FILE="$3"
 directory="$4"
 
