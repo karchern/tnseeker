@@ -247,6 +247,7 @@ def extractor(name_folder, folder_path, pathing, paired_ended,barcode,\
                         insertion_count[key].mapQ += map_quality
                     
                     if barcode:
+                        breakpoint()
                         bar = None
                         if "BC:Z:" in sam[-1]:
                             bar = sam[-1][:-1].split(":")[2]
