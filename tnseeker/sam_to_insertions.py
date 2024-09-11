@@ -334,7 +334,6 @@ def extractor(name_folder, folder_path, pathing, paired_ended,barcode,\
 
 def annotation_processer(insertion_count_filtered,read_threshold,read_cut,
                          barcode,annotation_file,ir_size_cutoff,name_folder,folder_path):
-    breakpoint()
     if read_threshold:
         insertion_count_filtered=dict_filter(insertion_count_filtered,read_cut,barcode)
     
