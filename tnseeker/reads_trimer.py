@@ -211,7 +211,6 @@ def extractor(fastq,folder_path,sequences,barcode,barcode_upstream,barcode_downs
                                      quality_set_bar_up,quality_set_bar_down,borders, True)
         write(trimmed, "/processed_reads_1.fastq", folder_path)
         write(barcodes, "/barcodes_1.txt", folder_path)
-    breakpoint()
     count_trimed+=len(trimmed)
     
     text_out = folder_path + "/trimming_log.log"
