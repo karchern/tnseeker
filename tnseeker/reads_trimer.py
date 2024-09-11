@@ -157,6 +157,7 @@ def extractor(fastq,folder_path,sequences,barcode,barcode_upstream,barcode_downs
     for file in fastq:
         file_counter += 1
         print(f"{Fore.BLUE} {datetime.datetime.now().strftime('%c')}{Fore.RESET} [{Fore.GREEN}INFO{Fore.RESET}] Processing {file_counter} out of {file_number} fastq files")
+        breakpoint()
         try:
             with gzip.open(file, "rb") as current:
                 for line in current:
@@ -204,6 +205,7 @@ def extractor(fastq,folder_path,sequences,barcode,barcode_upstream,barcode_downs
         except Exception:
             print(f'Error parsing {file}')
             
+    breakpoint()
     if not barcode:
         trimmed,barcodes=read_trimer(read_bucket,transposon_seq,quality_set,mismatches,trimming_len,miss_up,miss_down,
                                      quality_set_bar_up,quality_set_bar_down)
