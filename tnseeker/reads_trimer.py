@@ -156,7 +156,6 @@ def extractor(fastq,folder_path,sequences,barcode,barcode_upstream,barcode_downs
     for file in fastq:
         file_counter += 1
         print(f"{Fore.BLUE} {datetime.datetime.now().strftime('%c')}{Fore.RESET} [{Fore.GREEN}INFO{Fore.RESET}] Processing {file_counter} out of {file_number} fastq files")
-        breakpoint()
         try:
             with gzip.open(file, "rb") as current:
                 for line in current:
