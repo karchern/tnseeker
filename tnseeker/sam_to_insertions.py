@@ -164,6 +164,7 @@ def extractor(name_folder, folder_path, pathing, paired_ended,barcode,\
         read = ""
         barcode = {}
         bar=None
+        print("")
         with open(f"{folder_path}/barcodes_1.txt") as current:
             for line in current:
                 if "@" not in line:
