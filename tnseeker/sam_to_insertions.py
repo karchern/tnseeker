@@ -281,7 +281,7 @@ def extractor(name_folder, folder_path, pathing, paired_ended,barcode,\
         for key in insertion_count:
             if key in batch_goals[batch]:
                 insertion_count_filtered[key] = insertion_count[key]
-
+        breakpoint()
         result=pool.apply_async(annotation_processer, 
                             args=((insertion_count_filtered, 
                                    read_threshold,
@@ -375,7 +375,6 @@ def insert_parser(insertion_count,name_folder,folder_path,barcode):
         relative_gene_pos = [insertion_count[key].relative_gene_pos]
         
         barcodes,reads = '',0
-        breakpoint()
         for bar,read in insertion_count[key].barcode.items():
             barcodes += f'{bar}:{read};'
             reads += read
