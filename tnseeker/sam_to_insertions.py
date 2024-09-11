@@ -196,7 +196,7 @@ def extractor(name_folder, folder_path, pathing, paired_ended,barcode,\
                        f"{folder_path}/barcodes_1.txt",
                        file,
                        folder_path])
-    
+        breakpoint()
     print(f"{Fore.BLUE} {datetime.datetime.now().strftime('%c')}{Fore.RESET} [{Fore.GREEN}INFO{Fore.RESET}] Parsing Bowtie alignments into an insertion matrix")
     with open(file) as current:
         for line in current:
