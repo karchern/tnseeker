@@ -489,7 +489,6 @@ def variables_initializer():
 def main():
 
     variables = variables_initializer()
-    breakpoint()
     if variables["full"]:
         variables = bowtie_index_maker(variables)
         
