@@ -67,6 +67,6 @@ done
 mv "$TEMP_SAM" "$OUTPUT_FILE"
 
 # Clean up
-rm -f "$barcodes_chunk" "$barcodes_remain" "$TEMP_SAM" "$BARCODES_FILE"
+#rm -f "$barcodes_chunk" "$barcodes_remain" "$TEMP_SAM" "$BARCODES_FILE"
 
 echo "Processing complete. Output is in $OUTPUT_FILE"
