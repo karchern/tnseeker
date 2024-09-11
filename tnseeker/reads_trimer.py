@@ -115,7 +115,6 @@ def read_trimer(reading,sequences,quality_set,mismatches,trimming_len,miss_up,\
                 read[0],read[2] = str(read[0],"utf-8"),str(read[2],"utf-8")
                 read[0] = read[0].split(" ")[0]
                 processed_read.append(read)
-                breakpoint()
                 if barcode_allow:
                     barcode = barcodeID(sequence,sequence_bin,borders,miss_up,miss_down)
                     if barcode is not None:
@@ -189,7 +188,6 @@ def extractor(fastq,folder_path,sequences,barcode,barcode_upstream,barcode_downs
                             result_objs.append(result)
                         pool.close()
                         pool.join()
-                        breakpoint()
                         result = [result.get() for result in result_objs]
                         if not barcode:
                             for trimmed,barcodes in result:
@@ -205,7 +203,6 @@ def extractor(fastq,folder_path,sequences,barcode,barcode_upstream,barcode_downs
         except Exception:
             print(f'Error parsing {file}')
             
-    breakpoint()
     if not barcode:
         trimmed,barcodes=read_trimer(read_bucket,transposon_seq,quality_set,mismatches,trimming_len,miss_up,miss_down,
                                      quality_set_bar_up,quality_set_bar_down)
@@ -215,6 +212,7 @@ def extractor(fastq,folder_path,sequences,barcode,barcode_upstream,barcode_downs
                                      quality_set_bar_up,quality_set_bar_down,borders, True)
         write(trimmed, "/processed_reads_1.fastq", folder_path)
         write(barcodes, "/barcodes_1.txt", folder_path)
+    breakpoint()
     count_trimed+=len(trimmed)
     
     text_out = folder_path + "/trimming_log.log"
