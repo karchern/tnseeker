@@ -304,7 +304,6 @@ def extractor(name_folder, folder_path, pathing, paired_ended,barcode,\
     for entry in result:
         insertion,barcoded,insert = entry
         final_compiler = {**final_compiler, **insertion}
-        breakpoint()
         if barcode:
             for barcode in barcoded:
                 barcoded_insertions_final.append(barcode)
